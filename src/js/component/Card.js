@@ -59,7 +59,7 @@ export const Card = () => {
           </div>
         ))
       ) : (
-        <p>No contacts available.</p>
+        <p>No contacts available at the moment.</p>
       )}
     </div>
     );
