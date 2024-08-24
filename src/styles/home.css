@@ -1,0 +1,19 @@
+.foto{
+    border-radius: 100%;
+    height: 200px;
+    width: 200px;
+    border: solid 1px #8d8b8b;
+}
+
+.container{
+    margin: auto;
+    align-content: center;
+}
+.card{
+    margin: auto;
+    width: 700px;
+    padding: 5px;
+}
+.card-text{
+    color: #8d8b8b;
+}
