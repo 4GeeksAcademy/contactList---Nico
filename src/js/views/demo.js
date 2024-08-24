@@ -1,42 +1,97 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
-
 import "../../styles/demo.css";
 
 export const Demo = () => {
 	const { store, actions } = useContext(Context);
+	const navigate = useNavigate();
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		phone_number: "",
+		address: "",
+	});
+	const handleChange = (e) => {
+		setFormData({...formData,[e.target.name]: e.target.value});
+	};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		actions.createContact(formData);
+		navigate("/");
+	};
+	
 
 	return (
 		<div className="container">
-			<ul className="list-group">
-				{store.demo.map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="list-group-item d-flex justify-content-between"
-							style={{ background: item.background }}>
-							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
-							</Link>
-							{// Conditional render example
-							// Check to see if the background is orange, if so, display the message
-							item.background === "orange" ? (
-								<p style={{ color: item.initial }}>
-									Check store/flux.js scroll to the actions to see the code
-								</p>
-							) : null}
-							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
-								Change Color
-							</button>
-						</li>
-					);
-				})}
-			</ul>
-			<br />
+			<div className="text-center mt-3">
+				<h1>Add new contact</h1>
+			</div>
+			<form className="mt-5" onSubmit={handleSubmit}>
+				<div className="mb-3">
+					<label htmlFor="Name" className="form-label">
+						Full Name
+					</label>
+					<input
+					type="text"
+					className="form-control"
+					id="name"
+					name="name"
+					value={formData.name}
+					onChange={handleChange}
+					placeholder="Full Name"
+					/>
+				</div>
+				<div className="mb-3">
+					<label htmlFor="email" className="form-label">
+						Email
+					</label>
+					<input
+					type="email"
+					className="form-control"
+					id="email"
+					name="email"
+					value={formData.email}
+					onChange={handleChange}
+					placeholder="Enter Email"
+					/>
+				</div>
+				<div className="mb-3">
+					<label htmlFor="phone" className="form-label">
+						Phone
+					</label>
+					<input
+					type="text"
+					className="form-control"
+					id="phone"
+					name="phone"
+					value={formData.phone}
+					onChange={handleChange}
+					placeholder="Enter Phone number"
+					/>
+				</div>
+				<div className="mb-3">
+					<label htmlFor="address" className="form-label">
+						Address
+					</label>
+					<input
+					type="text"
+					className="form-control"
+					id="address"
+					name="address"
+					value={formData.address}
+					onChange={handleChange}
+					placeholder="Enter Address"
+					/>
+				</div>
+				<div className="d-grid gap-2">
+					<button className="btn btn-primary" type="submit">
+						save information
+					</button>
+				</div>
+			</form>
 			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
+				<div className="form-text mt-2"> Go back to contact list</div>
 			</Link>
 		</div>
 	);
