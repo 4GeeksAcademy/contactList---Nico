@@ -2,11 +2,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			image2:
-        "https://img.freepik.com/fotos-premium/momo-assustador_9083-16970.jpg",
+        "https://img.freepik.com/vector-gratis/mujer-feliz-cabello-negro_1308-171724.jpg",
       		imagemale:
-        "https://st3.depositphotos.com/9058402/15119/v/450/depositphotos_151195856-stock-illustration-pop-art-businessman-talking-on.jpg",
+        "https://img.freepik.com/vector-premium/retrato-lindos-ninos-pequenos-dibujos-animados-vector-ilustracion_723224-928.jpg",
       		image:
-        "https://media.istockphoto.com/id/1190626181/es/vector/retrato-de-una-chica-de-pelo-corto-androgin-mirando-con-una-mirada-lateral-diversidad-avatar.jpg?s=612x612&w=0&k=20&c=WJGPsDghyxbrq0cU1S0XmRlXCxWiwlo7AY4IMH4jm50=",
+		"https://img.freepik.com/foto-gratis/retrato-hombre-estilo-dibujos-animados_23-2151134092.jpg?t=st=1724530823~exp=1724534423~hmac=4b62a9de6ec97361a382ee665d2f2edd95f6a9c2ae39334315058a6f369c1a85&w=900",
 			listContacts: { contacts: [] },
 		},
 
@@ -113,4 +113,3 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		export default getState;
 
-		
