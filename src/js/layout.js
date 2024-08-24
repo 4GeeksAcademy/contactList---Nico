@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
-import {editContact} from "./views/editContact";
+import { EditContact } from "./views/editContact";
 import injectContext from "./store/appContext";
 
 
@@ -19,7 +19,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
-						<Route path="/edit/:contactId" element={<editContact />} />	
+						<Route path="/edit/:contactId" element={<EditContact />} />	
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 			</BrowserRouter>
